@@ -323,41 +323,54 @@ The recently added skills fall into two distinct tiers:
 **Scope:** 36 skills in `engineering-team/`
 **Rubric:** 5 dimensions (Actionability, Depth, Scripts, Cross-references, Freshness), 1–5 each, pass ≥3 avg
 
-| Skill | Actionability | Depth | Scripts | Cross-refs | Freshness | Avg | Verdict |
-|-------|--------------|-------|---------|-----------|----------|-----|---------|
-| a11y-audit | — | — | — | — | — | — | pending |
-| adversarial-reviewer | — | — | — | — | — | — | pending |
-| ai-security | — | — | — | — | — | — | pending |
-| aws-solution-architect | — | — | — | — | — | — | pending |
-| azure-cloud-architect | — | — | — | — | — | — | pending |
-| cloud-security | — | — | — | — | — | — | pending |
-| code-reviewer | — | — | — | — | — | — | pending |
-| email-template-builder | — | — | — | — | — | — | pending |
-| epic-design | — | — | — | — | — | — | pending |
-| gcp-cloud-architect | — | — | — | — | — | — | pending |
-| google-workspace-cli | — | — | — | — | — | — | pending |
-| incident-commander | — | — | — | — | — | — | pending |
-| incident-response | — | — | — | — | — | — | pending |
-| ms365-tenant-manager | — | — | — | — | — | — | pending |
-| playwright-pro | — | — | — | — | — | — | pending |
-| red-team | — | — | — | — | — | — | pending |
-| security-pen-testing | — | — | — | — | — | — | pending |
-| self-improving-agent | — | — | — | — | — | — | pending |
-| senior-architect | — | — | — | — | — | — | pending |
-| senior-backend | — | — | — | — | — | — | pending |
-| senior-computer-vision | — | — | — | — | — | — | pending |
-| senior-data-engineer | — | — | — | — | — | — | pending |
-| senior-data-scientist | — | — | — | — | — | — | pending |
-| senior-devops | — | — | — | — | — | — | pending |
-| senior-frontend | — | — | — | — | — | — | pending |
-| senior-fullstack | — | — | — | — | — | — | pending |
-| senior-ml-engineer | — | — | — | — | — | — | pending |
-| senior-prompt-engineer | — | — | — | — | — | — | pending |
-| senior-qa | — | — | — | — | — | — | pending |
-| senior-secops | — | — | — | — | — | — | pending |
-| senior-security | — | — | — | — | — | — | pending |
-| snowflake-development | — | — | — | — | — | — | pending |
-| stripe-integration-expert | — | — | — | — | — | — | pending |
-| tdd-guide | — | — | — | — | — | — | pending |
-| tech-stack-evaluator | — | — | — | — | — | — | pending |
-| threat-detection | — | — | — | — | — | — | pending |
+| Skill | Act | Dep | Scr | Xref | Fresh | Avg | Verdict |
+|-------|-----|-----|-----|------|-------|-----|---------|
+| a11y-audit | 5 | 5 | 4 | 5 | 5 | 4.8 | Keep★ |
+| adversarial-reviewer | 4 | 5 | 1 | 1 | 4 | 3.0 | Keep |
+| ai-security | 5 | 5 | 4 | 3 | 5 | 4.4 | Keep★ |
+| aws-solution-architect | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
+| azure-cloud-architect | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
+| cloud-security | 5 | 5 | 4 | 3 | 5 | 4.4 | Keep★ |
+| code-reviewer | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
+| email-template-builder | 5 | 5 | 1 | 1 | 4 | 3.2 | Keep |
+| epic-design | 4 | 5 | 3 | 5 | 5 | 4.4 | Keep★ |
+| gcp-cloud-architect | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
+| google-workspace-cli | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
+| incident-commander | 5 | 5 | 4 | 5 | 4 | 4.6 | Keep★ |
+| incident-response | 5 | 5 | 4 | 3 | 5 | 4.4 | Keep★ |
+| ms365-tenant-manager | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
+| playwright-pro | 4 | 4 | 1 | 1 | 4 | 2.8 | Deepen |
+| red-team | 5 | 5 | 4 | 3 | 5 | 4.4 | Keep★ |
+| security-pen-testing | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
+| self-improving-agent | 4 | 4 | 1 | 1 | 4 | 2.8 | Deepen |
+| senior-architect | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
+| senior-backend | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
+| senior-computer-vision | 5 | 5 | 4 | 4 | 4 | 4.4 | Keep★ |
+| senior-data-engineer | 4 | 4 | 4 | 4 | 4 | 4.0 | Keep★ |
+| senior-data-scientist | 5 | 5 | 4 | 4 | 4 | 4.4 | Keep★ |
+| senior-devops | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
+| senior-frontend | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
+| senior-fullstack | 5 | 4 | 3 | 4 | 4 | 4.0 | Keep★ |
+| senior-ml-engineer | 5 | 5 | 4 | 4 | 4 | 4.4 | Keep★ |
+| senior-prompt-engineer | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
+| senior-qa | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
+| senior-secops | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
+| senior-security | 4 | 5 | 3 | 4 | 4 | 4.0 | Keep★ |
+| snowflake-development | 5 | 5 | 3 | 4 | 5 | 4.4 | Keep★ |
+| stripe-integration-expert | 5 | 5 | 1 | 1 | 4 | 3.2 | Keep |
+| tdd-guide | 5 | 4 | 5 | 4 | 4 | 4.4 | Keep★ |
+| tech-stack-evaluator | 4 | 3 | 4 | 4 | 3 | 3.6 | Keep |
+| threat-detection | 5 | 5 | 4 | 3 | 5 | 4.4 | Keep★ |
+
+**Sprint 1 Summary:** Keep★=29, Keep=4, Deepen=2, Remove=0
+
+**Deepen targets:**
+- `playwright-pro` — 124 lines, no scripts, no references. Needs: a `playwright_helper.py` script and a `references/` folder with patterns.
+- `self-improving-agent` — 162 lines, no scripts, no references. Needs: practical reflection/self-eval scripts and references on self-improvement patterns.
+
+**Keep (borderline) notes:**
+- `adversarial-reviewer` — strong depth, but no scripts/references. Would benefit from a script that runs the 3 personas automatically.
+- `email-template-builder` — deep knowledge, but no scripts. A template generator script would elevate it.
+- `stripe-integration-expert` — excellent depth, no scripts/references. A Stripe webhook validator or test harness script would be high value.
+
+**Sprint 1 closed:** 2026-04-14
