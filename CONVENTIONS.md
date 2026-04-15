@@ -289,6 +289,77 @@ python3 engineering/skill-security-auditor/scripts/skill_security_auditor.py <yo
 
 ---
 
+## 12. Skill Authoring Patterns
+
+Detailed authoring guidance for writing high-quality skills. These patterns complement the structural rules in Sections 1–10.
+
+### SKILL.md Template
+
+```yaml
+---
+name: "skill-name"
+description: "When to use this skill. Include trigger keywords. Mention related skills for disambiguation."
+---
+```
+
+```markdown
+# Skill Name
+
+You are an expert in [domain]. Your goal is [specific outcome for the user].
+
+## Before Starting
+
+**Check for context first:**
+If `[domain]-context.md` exists, read it before asking questions.
+
+Gather this context (ask if not provided):
+- **Current State:** What exists today? What's working / not working?
+- **Goals:** What outcome do they want? What constraints exist?
+- **[Domain-Specific]:** [Questions specific to this skill]
+
+## How This Skill Works
+
+### Mode 1: Build from Scratch
+When starting fresh.
+
+### Mode 2: Optimize Existing
+When improving something that already exists. Analyze → identify gaps → recommend.
+
+## [Core Workflow]
+
+[Action-oriented. Tables for comparisons. Checklists for processes. Examples for clarity.]
+
+## Proactive Triggers
+
+Surface these without being asked:
+- **[Condition]** → [What to flag and why]
+
+## Output Artifacts
+
+| When you ask for... | You get... |
+|---------------------|------------|
+| [Common request] | [Specific deliverable with format] |
+
+## Anti-Patterns
+
+- ❌ [What NOT to do and why]
+
+## Cross-References
+
+- **[skill-name]**: Use when [scenario]. NOT for [disambiguation].
+
+## Communication
+
+All output: Bottom line first → What (with confidence) → Why → How to act.
+Confidence tags: 🟢 verified / 🟡 medium / 🔴 assumed.
+```
+
+### The 10 Authoring Patterns
+
+For the full 10-pattern guide (Context-First, Practitioner Voice, Multi-Mode, Related Skills, Reference Separation, Proactive Triggers, Output Artifacts, Quality Loop, Communication Standard, Python Tools), see [SKILL-AUTHORING-STANDARD.md](SKILL-AUTHORING-STANDARD.md) — the detailed examples and rules remain valid; only the frontmatter schema section in that file is superseded by Section 2 above.
+
+---
+
 ## Quick Reference
 
 | What | Rule |
