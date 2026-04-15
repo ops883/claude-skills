@@ -26,15 +26,15 @@ Every skill is a directory under one of the 9 domain folders:
 
 | Directory | Category | Current Count |
 |-----------|----------|---------------|
-| `engineering/` | POWERFUL-tier advanced engineering | 45 |
-| `engineering-team/` | Core engineering roles | 37 |
+| `engineering/` | POWERFUL-tier advanced engineering | 46 |
+| `engineering-team/` | Core engineering roles | 36 |
 | `marketing-skill/` | Marketing & growth | 44 |
-| `c-level-advisor/` | Executive advisory | 34 |
+| `c-level-advisor/` | Executive advisory | 28 |
 | `product-team/` | Product management | 16 |
-| `ra-qm-team/` | Regulatory & quality | 14 |
-| `project-management/` | PM tools | 9 |
-| `business-growth/` | Sales & business dev | 5 |
-| `finance/` | Financial analysis | 4 |
+| `ra-qm-team/` | Regulatory & quality | 13 |
+| `project-management/` | PM tools | 8 |
+| `business-growth/` | Sales & business dev | 4 |
+| `finance/` | Financial analysis | 3 |
 
 Place your skill in the domain that best fits. If unsure, open an issue to discuss.
 
