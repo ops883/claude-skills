@@ -113,12 +113,31 @@ export BROWSERSTACK_ACCESS_KEY="your-access-key"
 
 ## Quick Reference
 
-See `reference/` directory for:
+See `references/` directory for:
 - `golden-rules.md` — The 10 non-negotiable rules
 - `locators.md` — Complete locator priority with cheat sheet
 - `assertions.md` — Web-first assertions reference
 - `fixtures.md` — Custom fixtures and storageState patterns
 - `common-pitfalls.md` — Top 10 mistakes and fixes
 - `flaky-tests.md` — Diagnosis commands and quick fixes
+
+## Python Tools
+
+### `scripts/pw_test_analyzer.py`
+
+Analyze a Playwright test file (or directory) for anti-patterns. Reports violations against the 10 Golden Rules with line numbers and suggested fixes.
+
+```bash
+# Analyze a single test file
+python scripts/pw_test_analyzer.py tests/auth/login.spec.ts
+
+# Analyze all tests in a directory
+python scripts/pw_test_analyzer.py tests/
+
+# JSON output for CI integration
+python scripts/pw_test_analyzer.py tests/ --output json
+```
+
+**Detects:** `waitForTimeout`, hardcoded URLs, CSS/XPath locators, `textContent()` in assertions, missing `baseURL`, shared mutable state, `page.goto` with hardcoded domains.
 
 See `templates/README.md` for the full template index.

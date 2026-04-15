@@ -155,6 +155,35 @@ Monitors command output for errors. When detected, appends a structured entry to
 | Codex CLI | AGENTS.md | ✅ Adapted (reads AGENTS.md patterns) |
 | GitHub Copilot | `.github/copilot-instructions.md` | ⚠️ Manual promotion only |
 
+## Python Tools
+
+### `scripts/memory_health.py`
+
+Analyze `MEMORY.md` (and topic files) to report health metrics and promotion candidates. No external dependencies — reads files in `~/.claude/projects/<path>/memory/`.
+
+```bash
+# Analyze default memory location (auto-detected from cwd)
+python scripts/memory_health.py
+
+# Analyze a specific memory directory
+python scripts/memory_health.py ~/.claude/projects/my-project/memory/
+
+# JSON output
+python scripts/memory_health.py --output json
+
+# Show only promotion candidates (recurring patterns)
+python scripts/memory_health.py --filter promotions
+```
+
+**Reports:** line count vs. 200-line limit, topic file inventory, stale entries (references files not on disk), promotion candidates (patterns mentioned 3+ times), consolidation opportunities.
+
+## References
+
+See `references/` directory for:
+- `memory-architecture.md` — How Claude Code's memory stack works
+- `promotion-rules.md` — When and how to promote patterns
+- `rules-directory-patterns.md` — Scoped rules with `.claude/rules/`
+
 ## Related
 
 - [Claude Code Memory Docs](https://code.claude.com/docs/en/memory)
