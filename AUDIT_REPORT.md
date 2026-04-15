@@ -339,10 +339,10 @@ The recently added skills fall into two distinct tiers:
 | incident-commander | 5 | 5 | 4 | 5 | 4 | 4.6 | Keep★ |
 | incident-response | 5 | 5 | 4 | 3 | 5 | 4.4 | Keep★ |
 | ms365-tenant-manager | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
-| playwright-pro | 4 | 4 | 1 | 1 | 4 | 2.8 | Deepen |
+| playwright-pro | 4 | 4 | 4 | 5 | 4 | 4.2 | Keep★ |
 | red-team | 5 | 5 | 4 | 3 | 5 | 4.4 | Keep★ |
 | security-pen-testing | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
-| self-improving-agent | 4 | 4 | 1 | 1 | 4 | 2.8 | Deepen |
+| self-improving-agent | 4 | 4 | 4 | 5 | 4 | 4.2 | Keep★ |
 | senior-architect | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
 | senior-backend | 5 | 4 | 4 | 4 | 4 | 4.2 | Keep★ |
 | senior-computer-vision | 5 | 5 | 4 | 4 | 4 | 4.4 | Keep★ |
@@ -362,11 +362,11 @@ The recently added skills fall into two distinct tiers:
 | tech-stack-evaluator | 4 | 3 | 4 | 4 | 3 | 3.6 | Keep |
 | threat-detection | 5 | 5 | 4 | 3 | 5 | 4.4 | Keep★ |
 
-**Sprint 1 Summary:** Keep★=29, Keep=4, Deepen=2, Remove=0
+**Sprint 1 Summary:** Keep★=31, Keep=4, Deepen=0, Remove=0 ✅
 
-**Deepen targets:**
-- `playwright-pro` — 124 lines, no scripts, no references. Needs: a `playwright_helper.py` script and a `references/` folder with patterns.
-- `self-improving-agent` — 162 lines, no scripts, no references. Needs: practical reflection/self-eval scripts and references on self-improvement patterns.
+**Deepened (2 skills upgraded from Deepen → Keep★):**
+- `playwright-pro` — Added `scripts/pw_test_analyzer.py` (anti-pattern detector, 10 rules, JSON output) + renamed `reference/` → `references/`. Now 4.2 avg.
+- `self-improving-agent` — Added `scripts/memory_health.py` (utilization, stale entries, promotion candidates) + renamed `reference/` → `references/`. Now 4.2 avg.
 
 **Keep (borderline) notes:**
 - `adversarial-reviewer` — strong depth, but no scripts/references. Would benefit from a script that runs the 3 personas automatically.
