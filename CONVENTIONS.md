@@ -274,6 +274,29 @@ python3 engineering/skill-security-auditor/scripts/skill_security_auditor.py <yo
 
 ---
 
+## 11. Quality Rubric
+
+Use this rubric when auditing existing skills or reviewing PRs. Score each dimension 1–5. Skills must score ≥ 3 on all five dimensions to receive `quality: verified`.
+
+| Dimension | Poor (1) | Good (3) | Excellent (5) |
+|-----------|----------|----------|---------------|
+| **Actionability** | Vague advice, no steps | Steps with examples | Executable workflow the agent can run directly |
+| **Depth** | Surface overview only | Core patterns covered | Edge cases + anti-patterns included |
+| **Scripts** | None | 1 script with `--help` | 2+ scripts with `--help` and documented flags |
+| **Cross-references** | None | 1–2 links to related skills | Full related-skill map with when/when-not context |
+| **Freshness** | Stale or contradicted by newer skills | Mostly current | Actively maintained, no stale references |
+
+**Passing threshold:** All dimensions ≥ 3.
+
+**Audit outcomes:**
+- **Keep** — all dimensions ≥ 3. Add `quality: verified` to frontmatter.
+- **Deepen** — any dimension 1–2. File improvement tasks; re-score before marking verified.
+- **Remove** — redundant, superseded, or unfixable. Delete skill, update domain index and docs.
+
+**Audit record:** Every `quality: verified` tag must have a corresponding entry in `AUDIT_REPORT.md` before merging. PR reviewers enforce this gate.
+
+---
+
 ## Quick Reference
 
 | What | Rule |
