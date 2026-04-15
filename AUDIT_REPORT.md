@@ -314,3 +314,50 @@ The recently added skills fall into two distinct tiers:
 *Report generated 2026-02-15. Skills assessed against the bar: "Would this make someone say 'holy shit, this actually knows what it's doing?'"*
 
 *Business-growth and finance skills clear that bar. Campaign-analytics nearly does. PM skills mostly don't.*
+
+---
+
+## Sprint 1 — engineering-team Audit
+
+**Date:** 2026-04-14
+**Scope:** 36 skills in `engineering-team/`
+**Rubric:** 5 dimensions (Actionability, Depth, Scripts, Cross-references, Freshness), 1–5 each, pass ≥3 avg
+
+| Skill | Actionability | Depth | Scripts | Cross-refs | Freshness | Avg | Verdict |
+|-------|--------------|-------|---------|-----------|----------|-----|---------|
+| a11y-audit | — | — | — | — | — | — | pending |
+| adversarial-reviewer | — | — | — | — | — | — | pending |
+| ai-security | — | — | — | — | — | — | pending |
+| aws-solution-architect | — | — | — | — | — | — | pending |
+| azure-cloud-architect | — | — | — | — | — | — | pending |
+| cloud-security | — | — | — | — | — | — | pending |
+| code-reviewer | — | — | — | — | — | — | pending |
+| email-template-builder | — | — | — | — | — | — | pending |
+| epic-design | — | — | — | — | — | — | pending |
+| gcp-cloud-architect | — | — | — | — | — | — | pending |
+| google-workspace-cli | — | — | — | — | — | — | pending |
+| incident-commander | — | — | — | — | — | — | pending |
+| incident-response | — | — | — | — | — | — | pending |
+| ms365-tenant-manager | — | — | — | — | — | — | pending |
+| playwright-pro | — | — | — | — | — | — | pending |
+| red-team | — | — | — | — | — | — | pending |
+| security-pen-testing | — | — | — | — | — | — | pending |
+| self-improving-agent | — | — | — | — | — | — | pending |
+| senior-architect | — | — | — | — | — | — | pending |
+| senior-backend | — | — | — | — | — | — | pending |
+| senior-computer-vision | — | — | — | — | — | — | pending |
+| senior-data-engineer | — | — | — | — | — | — | pending |
+| senior-data-scientist | — | — | — | — | — | — | pending |
+| senior-devops | — | — | — | — | — | — | pending |
+| senior-frontend | — | — | — | — | — | — | pending |
+| senior-fullstack | — | — | — | — | — | — | pending |
+| senior-ml-engineer | — | — | — | — | — | — | pending |
+| senior-prompt-engineer | — | — | — | — | — | — | pending |
+| senior-qa | — | — | — | — | — | — | pending |
+| senior-secops | — | — | — | — | — | — | pending |
+| senior-security | — | — | — | — | — | — | pending |
+| snowflake-development | — | — | — | — | — | — | pending |
+| stripe-integration-expert | — | — | — | — | — | — | pending |
+| tdd-guide | — | — | — | — | — | — | pending |
+| tech-stack-evaluator | — | — | — | — | — | — | pending |
+| threat-detection | — | — | — | — | — | — | pending |
