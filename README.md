@@ -162,6 +162,245 @@ Run `./scripts/convert.sh --tool all` to generate tool-specific outputs locally.
 | **📈 Business & Growth** | 5 | Customer success, sales engineer, revenue ops, contracts & proposals | [business-growth/](business-growth/) |
 | **💰 Finance** | 4 | Financial analyst (DCF, budgeting, forecasting), SaaS metrics coach (ARR, MRR, churn, LTV, CAC) | [finance/](finance/) |
 
+<details>
+<summary><strong>Full skills index — all 235 skills with one-line descriptions</strong></summary>
+
+### Engineering Core (36)
+| Skill | What it does |
+|-------|-------------|
+| `a11y-audit` | WCAG 2.2 accessibility audit — scan, fix, and verify with 2 Python tools |
+| `adversarial-reviewer` | Adversarial code review through 3 hostile personas: Saboteur, New Hire, Security Auditor |
+| `ai-security` | AI/ML system security — prompt injection, model inversion, data poisoning risk scoring |
+| `aws-solution-architect` | AWS architecture design with serverless patterns, CDK, and IaC templates |
+| `azure-cloud-architect` | Azure infrastructure design with ARM/Bicep templates and landing zones |
+| `cloud-security` | Cloud infrastructure security — IAM privilege escalation, S3/SG misconfigurations |
+| `code-reviewer` | Code review automation for TypeScript, JavaScript, Python, Go, Swift, Kotlin |
+| `email-template-builder` | Production email templates in TSX (React Email) or MJML with 5 template types |
+| `epic-design` | Cinematic 2.5D interactive websites — scroll storytelling, parallax, 45+ animation techniques |
+| `gcp-cloud-architect` | GCP infrastructure design with Terraform modules and cloud-native patterns |
+| `google-workspace-cli` | Google Workspace administration via the gws CLI |
+| `incident-commander` | Incident command: SEV classification, OODA loops, comms templates, 6 Python tools |
+| `incident-response` | Security incident triage, NIST SP 800-61 forensics, 14-type incident taxonomy |
+| `ms365-tenant-manager` | Microsoft 365 tenant administration for Global Administrators |
+| `playwright-pro` | Production-grade Playwright testing — generate, review, fix flaky tests, TestRail/BrowserStack |
+| `red-team` | MITRE ATT&CK kill-chain planning, effort scoring, choke point identification |
+| `security-pen-testing` | Penetration testing methodology, vulnerability assessment, exploit analysis |
+| `self-improving-agent` | Curates Claude Code auto-memory — promotes patterns to CLAUDE.md, extracts reusable skills |
+| `senior-architect` | System architecture design, microservices, distributed systems, ADRs |
+| `senior-backend` | Backend APIs, microservices, database architecture, REST/GraphQL |
+| `senior-computer-vision` | Object detection, image segmentation, visual AI pipeline engineering |
+| `senior-data-engineer` | Scalable data pipelines, ETL/ELT, Spark, Airflow, data infrastructure |
+| `senior-data-scientist` | Statistical modeling, experiment design, causal inference, ML workflows |
+| `senior-devops` | CI/CD, infrastructure automation, containerization, cloud deployments |
+| `senior-frontend` | React, Next.js, TypeScript, component architecture, performance |
+| `senior-fullstack` | Full-stack scaffolding for Next.js/GraphQL/PostgreSQL and other modern stacks |
+| `senior-ml-engineer` | ML model productionization, MLOps pipelines, LLM integrations |
+| `senior-prompt-engineer` | Prompt optimization, RAG systems, multi-agent orchestration |
+| `senior-qa` | Unit, integration, and E2E test generation with TDD workflows |
+| `senior-secops` | Application security, vulnerability management, SAST/DAST, compliance |
+| `senior-security` | Threat modeling, secure architecture, security code review |
+| `snowflake-development` | Snowflake SQL, Dynamic Tables, Streams/Tasks, data pipeline optimization |
+| `stripe-integration-expert` | Stripe subscriptions, webhooks, billing portal, usage-based pricing |
+| `tdd-guide` | Test-driven development — red/green/refactor, fixture generation, 8 Python tools |
+| `tech-stack-evaluator` | Technology comparison with weighted scoring, TCO analysis, migration estimates |
+| `threat-detection` | Hypothesis-driven threat hunting, IOC sweeps, z-score anomaly detection |
+
+### Engineering POWERFUL (46)
+| Skill | What it does |
+|-------|-------------|
+| `agent-designer` | Multi-agent system design — architectures, tool boundaries, handoff protocols |
+| `agent-workflow-designer` | Agent workflow patterns — routing, orchestration, state machines |
+| `agenthub` | Spawns N parallel subagents competing on the same task, synthesizes best result |
+| `api-design-reviewer` | REST/GraphQL API design review — consistency, versioning, backwards compatibility |
+| `api-test-suite-builder` | Integration test suite generation for REST endpoints |
+| `autoresearch-agent` | Autonomous experiment loop that optimizes any file by a measurable metric |
+| `behuman` | Makes AI responses sound genuinely human — less robotic, more authentic |
+| `browser-automation` | Browser task automation, web scraping, form filling, screenshot capture |
+| `changelog-generator` | Structured changelog generation from git commit history |
+| `ci-cd-pipeline-builder` | CI/CD pipeline construction for GitHub Actions, GitLab CI, CircleCI |
+| `code-tour` | CodeTour walkthroughs — annotated guided tours of codebases |
+| `codebase-onboarding` | Rapid codebase understanding — architecture maps, dependency graphs, entry points |
+| `data-quality-auditor` | Dataset completeness, consistency, accuracy, and validity auditing |
+| `database-designer` | Database schema design, migrations, query optimization |
+| `database-schema-designer` | ERD diagrams, normalization, table relationships, index design |
+| `demo-video` | Demo video scripts, product walkthroughs, feature showcase animations |
+| `dependency-auditor` | Dependency security audits — CVEs, license conflicts, outdated packages |
+| `docker-development` | Dockerfile optimization, docker-compose, multi-stage builds, container security |
+| `env-secrets-manager` | Environment variable management, secrets rotation, .env best practices |
+| `focused-fix` | Targeted fix mode — diagnose and repair a specific feature end-to-end |
+| `git-worktree-manager` | Git worktree workflows for parallel feature development |
+| `helm-chart-builder` | Helm chart development, templating, values hierarchy, chart testing |
+| `interview-system-designer` | Technical interview process design, rubric creation, assessment structure |
+| `karpathy-coder` | Enforces Karpathy's 4 coding principles in all code written |
+| `llm-cost-optimizer` | LLM API cost reduction — token optimization, model routing, caching strategies |
+| `llm-wiki` | Persistent personal knowledge base (Obsidian second brain) ingested by LLM |
+| `mcp-server-builder` | MCP server construction — tools, resources, prompts, TypeScript/Python |
+| `migration-architect` | Large-scale system migration planning — strangler fig, phased rollout |
+| `monorepo-navigator` | Monorepo tooling (Nx, Turborepo), workspace configuration, build caching |
+| `observability-designer` | Observability stack design — metrics, logs, traces, alerting |
+| `performance-profiler` | Performance profiling, bottleneck identification, optimization strategies |
+| `pr-review-expert` | Pull request review — security, logic, style, test coverage |
+| `prompt-governance` | Production prompt management — versioning, A/B testing, drift detection |
+| `rag-architect` | RAG pipeline design, retrieval strategies, embedding selection, chunking |
+| `release-manager` | Release planning, changelogs, deployment coordination, rollback procedures |
+| `runbook-generator` | Operational runbook generation for incidents and routine procedures |
+| `secrets-vault-manager` | HashiCorp Vault, AWS Secrets Manager, Azure Key Vault integration |
+| `self-eval` | Honest AI work quality evaluation with two-axis scoring |
+| `skill-security-auditor` | Security audit of Claude Code skills for prompt injection and data leakage |
+| `skill-tester` | Automated skill quality testing and benchmark evaluation |
+| `spec-driven-workflow` | Spec-first development — acceptance criteria before code |
+| `sql-database-assistant` | SQL query writing, optimization, migration generation |
+| `statistical-analyst` | Hypothesis tests, A/B experiment analysis, sample size calculation |
+| `tc-tracker` | Technical change lifecycle tracking with handoff format and 5 Python tools |
+| `tech-debt-tracker` | Codebase tech debt scanning, severity scoring, prioritized backlog |
+| `terraform-patterns` | Terraform module design, state management, security hardening, CI/CD |
+
+### Product (16)
+| Skill | What it does |
+|-------|-------------|
+| `agile-product-owner` | Agile backlog management, user story generation, sprint planning |
+| `apple-hig-expert` | Apple HIG compliance — iOS/macOS/visionOS design audit with Liquid Glass focus |
+| `code-to-prd` | Reverse-engineers any codebase into a Product Requirements Document |
+| `competitive-teardown` | Competitor analysis, feature matrix, gap analysis, positioning |
+| `experiment-designer` | A/B test planning, hypothesis writing, sample size calculation |
+| `landing-page-generator` | High-converting landing pages as Next.js TSX + Tailwind CSS |
+| `product-analytics` | KPI design, retention curves, cohort analysis, funnel conversion |
+| `product-discovery` | Opportunity validation, assumption mapping, discovery sprints |
+| `product-manager-toolkit` | RICE prioritization, customer interview analysis, 2 Python tools |
+| `product-strategist` | OKR cascade generation, strategic planning frameworks |
+| `research-summarizer` | Structured research synthesis for non-technical stakeholders |
+| `roadmap-communicator` | Roadmap narratives, release notes, changelog generation |
+| `saas-scaffolder` | Complete SaaS boilerplate with auth, billing, API setup |
+| `spec-to-repo` | Converts a spec document into a scaffolded, runnable repository |
+| `ui-design-system` | Design token generation, component systems, brand color cascades |
+| `ux-researcher-designer` | Data-driven persona creation, user research synthesis |
+
+### Marketing (44)
+| Skill | What it does |
+|-------|-------------|
+| `ab-test-setup` | A/B test design, hypothesis writing, significance analysis |
+| `ad-creative` | Ad creative generation and iteration for paid advertising |
+| `ai-seo` | Optimize content for AI search citations (ChatGPT, Perplexity, Google AI Overviews) |
+| `analytics-tracking` | GA4, Google Tag Manager, event tracking setup and audit |
+| `app-store-optimization` | ASO keyword research, competitor analysis, listing optimization |
+| `brand-guidelines` | Brand guideline application and enforcement |
+| `campaign-analytics` | Multi-touch attribution, funnel conversion, campaign ROI with 3 Python tools |
+| `churn-prevention` | Cancellation flow design, save offers, exit surveys, win-back sequences |
+| `cold-email` | B2B cold outreach sequences that book meetings |
+| `competitor-alternatives` | Competitor comparison and alternative pages for SEO |
+| `content-creator` | Legacy redirect — routes to specialized content skills |
+| `content-humanizer` | Makes AI-generated content sound genuinely human |
+| `content-production` | Full content pipeline from topic to published-ready piece |
+| `content-strategy` | Content strategy planning, topic clusters, editorial calendar |
+| `copy-editing` | Marketing copy editing and improvement |
+| `copywriting` | Marketing copy for landing pages, ads, emails, product pages |
+| `email-sequence` | Drip campaigns, automated email sequences, lifecycle emails |
+| `form-cro` | Lead gen and non-signup form optimization |
+| `free-tool-strategy` | Free tool marketing strategy for lead gen and SEO |
+| `launch-strategy` | Product launch planning, feature announcement, release strategy |
+| `marketing-context` | Marketing context document that all marketing skills read before starting |
+| `marketing-demand-acquisition` | Demand generation campaigns, paid ad optimization |
+| `marketing-ideas` | Marketing strategy ideation for SaaS and software products |
+| `marketing-ops` | Central router for the marketing skill ecosystem |
+| `marketing-psychology` | Behavioral science principles applied to marketing copy and design |
+| `marketing-strategy-pmm` | Product marketing positioning, GTM strategy, competitive intelligence |
+| `onboarding-cro` | Post-signup onboarding optimization, activation, first-run experience |
+| `page-cro` | Marketing page conversion optimization |
+| `paid-ads` | Google Ads, Meta, LinkedIn paid advertising campaigns |
+| `paywall-upgrade-cro` | In-app paywalls, upgrade screens, upsell modal optimization |
+| `popup-cro` | Popup, modal, and overlay optimization |
+| `pricing-strategy` | SaaS pricing design — tier structure, value metrics, pricing pages |
+| `programmatic-seo` | SEO-driven pages at scale using templates and data |
+| `prompt-engineer-toolkit` | AI prompt optimization and reusable prompt template libraries |
+| `referral-program` | Referral and affiliate program design and optimization |
+| `schema-markup` | Structured data implementation and validation |
+| `seo-audit` | Technical SEO audit and diagnosis |
+| `signup-flow-cro` | Signup, registration, and trial activation flow optimization |
+| `site-architecture` | Website structure, URL hierarchy, internal linking strategy |
+| `social-content` | LinkedIn, Twitter/X, and social media content creation |
+| `social-media-analyzer` | Social media campaign analytics and performance tracking |
+| `social-media-manager` | Social media strategy, content calendar, community management |
+| `video-content-strategist` | Video content strategy, YouTube optimization, script writing |
+| `x-twitter-growth` | X/Twitter audience building and viral content strategy |
+
+### C-Level Advisory (28)
+| Skill | What it does |
+|-------|-------------|
+| `agent-protocol` | Inter-agent communication protocol for C-suite agent teams |
+| `board-deck-builder` | Board and investor update deck assembly from cross-functional inputs |
+| `board-meeting` | Multi-agent board meeting protocol for strategic decisions |
+| `ceo-advisor` | CEO strategic guidance — leadership, org design, board relations |
+| `cfo-advisor` | CFO guidance — SaaS metrics, fundraising, financial planning |
+| `change-management` | Organizational change rollout frameworks |
+| `chief-of-staff` | C-suite orchestration and cross-functional coordination |
+| `chro-advisor` | People leadership — hiring, performance, culture, compensation |
+| `ciso-advisor` | Security leadership for growth-stage companies |
+| `cmo-advisor` | Marketing leadership — demand gen, brand, PLG, pricing |
+| `company-os` | Meta-framework for how a company runs — connective tissue across C-suite |
+| `competitive-intel` | Systematic competitor tracking feeding CMO, CRO, and CPO workflows |
+| `context-engine` | Loads and manages company context for all C-suite advisor skills |
+| `coo-advisor` | Operations leadership — processes, metrics, scaling |
+| `cpo-advisor` | Product leadership — roadmap, discovery, strategy |
+| `cro-advisor` | Revenue leadership for B2B SaaS — pipeline, sales, success |
+| `cs-onboard` | Founder onboarding interview capturing company context across 7 dimensions |
+| `cto-advisor` | CTO guidance — architecture decisions, team building, technical strategy |
+| `culture-architect` | Build and measure company culture as operational behavior |
+| `decision-logger` | Two-layer memory architecture for board meeting decisions |
+| `executive-mentor` | Adversarial thinking partner for founders and executives |
+| `founder-coach` | Personal leadership development for founders and first-time CEOs |
+| `internal-narrative` | One coherent company story across employees, investors, and customers |
+| `intl-expansion` | International market expansion strategy |
+| `ma-playbook` | M&A strategy for acquiring or being acquired |
+| `org-health-diagnostic` | Cross-functional organizational health check |
+| `scenario-war-room` | What-if modeling for cascading multi-variable scenarios |
+| `strategic-alignment` | Cascades strategy from boardroom to individual contributor |
+
+### Regulatory & QM (13)
+| Skill | What it does |
+|-------|-------------|
+| `capa-officer` | CAPA system management for medical device QMS |
+| `fda-consultant-specialist` | FDA regulatory guidance for medical device companies |
+| `gdpr-dsgvo-expert` | GDPR and German DSGVO compliance automation |
+| `information-security-manager-iso27001` | ISO 27001 ISMS implementation for HealthTech and MedTech |
+| `isms-audit-expert` | ISO 27001 ISMS audit and compliance verification |
+| `mdr-745-specialist` | EU MDR 2017/745 classification, technical documentation, notified body |
+| `qms-audit-expert` | ISO 13485 internal audit for medical device QMS |
+| `quality-documentation-manager` | Document control for medical device QMS |
+| `quality-manager-qmr` | Senior QMR for HealthTech and MedTech companies |
+| `quality-manager-qms-iso13485` | ISO 13485 QMS implementation and maintenance |
+| `regulatory-affairs-head` | Senior RA Manager for HealthTech and MedTech companies |
+| `risk-management-specialist` | ISO 14971 medical device risk management throughout product lifecycle |
+| `soc2-compliance` | SOC 2 audit preparation, Trust Service Criteria mapping, controls |
+
+### Project Management (8)
+| Skill | What it does |
+|-------|-------------|
+| `atlassian-admin` | Atlassian platform administration — users, permissions, security |
+| `atlassian-templates` | Jira and Confluence template creation and management |
+| `confluence-expert` | Confluence spaces, knowledge bases, page templates, macros |
+| `jira-expert` | Jira projects, JQL queries, automation rules, sprint management |
+| `meeting-analyzer` | Meeting transcript analysis — behavioral patterns, action items |
+| `scrum-master` | Data-driven Scrum coaching with velocity and retro frameworks |
+| `senior-pm` | Enterprise project management — scope, risk, stakeholder comms |
+| `team-communications` | Internal company communications — 3P updates, all-hands, announcements |
+
+### Business & Growth (4)
+| Skill | What it does |
+|-------|-------------|
+| `contract-and-proposal-writer` | Sales proposals, SOWs, and contract drafting |
+| `customer-success-manager` | Customer health scoring, churn prediction, expansion opportunities |
+| `revenue-operations` | Pipeline analysis, revenue forecasting, GTM efficiency metrics |
+| `sales-engineer` | RFP gap analysis, competitive matrix, POC planning and execution |
+
+### Finance (3)
+| Skill | What it does |
+|-------|-------------|
+| `business-investment-advisor` | Business investment analysis and capital allocation |
+| `financial-analyst` | DCF valuation, ratio analysis, budget variance, forecasting |
+| `saas-metrics-coach` | SaaS financial health — ARR, MRR, churn, LTV, CAC, magic number |
+
+</details>
+
 ---
 
 ## Personas
