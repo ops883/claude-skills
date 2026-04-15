@@ -1,6 +1,6 @@
 # Contributing to Claude Code Skills
 
-Thank you for your interest in contributing! This repository is the largest open-source Claude Code skills & agent plugins library (6,800+ stars, 205 production-ready skills).
+Thank you for your interest in contributing! This repository is the largest open-source Claude Code skills & agent plugins library (5,200+ stars, 235 production-ready skills).
 
 **Before you start:** Read [CONVENTIONS.md](CONVENTIONS.md) — it contains the mandatory technical rules that every contribution must follow. PRs that violate conventions will be closed.
 
