@@ -202,7 +202,7 @@ When recommending experiments, consider tests for:
 - Personalization by role or goal
 - Support and help availability
 
-**For comprehensive experiment ideas**: See [references/experiments.md](references/experiments.md)
+**For comprehensive experiment ideas**: Use the experiment frameworks outlined in the workflows above.
 
 ---
 

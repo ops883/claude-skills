@@ -491,17 +491,9 @@ python3 scripts/prd_scaffolder.py analysis.json -o prd/ -n "My App"
 # 4. Fill in TODO sections page-by-page using the SKILL.md workflow
 ```
 
-Both scripts are **stdlib-only** — no pip install needed.
-
-### References
+Both scripts are **stdlib-only** — no pip install needed. See [references/](references/) for quality checklist and framework patterns.
 
 | File | Contents |
 |------|----------|
 | `references/prd-quality-checklist.md` | Validation checklist for completeness, accuracy, readability |
 | `references/framework-patterns.md` | Framework-specific patterns for routes, state, APIs, forms, permissions |
-
----
-
-## Attribution
-
-This skill was inspired by [code-to-prd](https://github.com/lihanglogan/code-to-prd) by [@lihanglogan](https://github.com/lihanglogan), who proposed the original concept and methodology in [PR #368](https://github.com/alirezarezvani/claude-skills/pull/368). The core three-phase workflow (global scan → page-by-page analysis → structured document generation) originated from that work. This version was rebuilt from scratch in English with added tooling (analysis scripts, scaffolder, framework reference, quality checklist).

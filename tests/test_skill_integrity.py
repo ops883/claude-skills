@@ -105,6 +105,23 @@ class TestSkillMdFrontmatter:
                 f"{_short_id(skill_dir)}/SKILL.md frontmatter missing 'name' field"
             )
 
+    @pytest.mark.parametrize(
+        "skill_dir",
+        ALL_SKILL_DIRS,
+        ids=[_short_id(s) for s in ALL_SKILL_DIRS],
+    )
+    def test_frontmatter_has_description(self, skill_dir):
+        skill_md = os.path.join(skill_dir, "SKILL.md")
+        with open(skill_md, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        match = re.match(r"^---\n(.*?)---\n", content, re.DOTALL)
+        if match:
+            fm = match.group(1)
+            assert "description:" in fm, (
+                f"{_short_id(skill_dir)}/SKILL.md frontmatter missing 'description' field"
+            )
+
 
 class TestSkillMdHasH1:
     """Every SKILL.md must have at least one H1 heading."""
@@ -124,6 +141,94 @@ class TestSkillMdHasH1:
         assert re.search(r"^# .+", content, re.MULTILINE), (
             f"{_short_id(skill_dir)}/SKILL.md has no H1 heading"
         )
+
+
+class TestSkillMdLineCount:
+    """SKILL.md files must not exceed 500 lines."""
+
+    @pytest.mark.parametrize(
+        "skill_dir",
+        ALL_SKILL_DIRS,
+        ids=[_short_id(s) for s in ALL_SKILL_DIRS],
+    )
+    def test_under_500_lines(self, skill_dir):
+        skill_md = os.path.join(skill_dir, "SKILL.md")
+        with open(skill_md, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+        assert len(lines) <= 500, (
+            f"{_short_id(skill_dir)}/SKILL.md is {len(lines)} lines — exceeds 500-line limit. "
+            "Move detailed content to references/ files."
+        )
+
+
+class TestSkillMdInternalLinks:
+    """Links to references/ or assets/ files in SKILL.md must resolve."""
+
+    @pytest.mark.parametrize(
+        "skill_dir",
+        ALL_SKILL_DIRS,
+        ids=[_short_id(s) for s in ALL_SKILL_DIRS],
+    )
+    def test_references_links_resolve(self, skill_dir):
+        skill_md = os.path.join(skill_dir, "SKILL.md")
+        with open(skill_md, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        links = re.findall(r"\[.*?\]\(([^)]+)\)", content)
+        broken = []
+        for link in links:
+            if link.startswith("http") or link.startswith("#"):
+                continue
+            if not (link.startswith("references/") or link.startswith("assets/")):
+                continue
+            # Strip fragment identifiers before checking file existence
+            path_part = link.split("#")[0]
+            target = os.path.join(skill_dir, path_part)
+            if not os.path.exists(target):
+                broken.append(link)
+
+        assert not broken, (
+            f"{_short_id(skill_dir)}/SKILL.md has broken internal links: {broken}"
+        )
+
+
+class TestFrontmatterExtraFieldsAudit:
+    """Report (but do not fail) skills with extra frontmatter fields.
+
+    CONVENTIONS.md allows only: name, description, quality.
+    This test never fails — it prints a progress report for Phase 2 audits.
+    Once all violations are fixed, replace `assert True` with a blocking assert.
+    """
+
+    ALLOWED_FIELDS = {"name", "description", "quality"}
+
+    def test_report_extra_frontmatter_fields(self, capsys):
+        violations = {}
+        for skill_dir in ALL_SKILL_DIRS:
+            skill_md = os.path.join(skill_dir, "SKILL.md")
+            with open(skill_md, "r", encoding="utf-8") as f:
+                content = f.read()
+
+            match = re.match(r"^---\n(.*?)---\n", content, re.DOTALL)
+            if not match:
+                continue
+
+            fm = match.group(1)
+            fields = set(re.findall(r"^(\w[\w-]*):", fm, re.MULTILINE))
+            extra = fields - self.ALLOWED_FIELDS
+            if extra:
+                violations[_short_id(skill_dir)] = sorted(extra)
+
+        if violations:
+            print(
+                f"\n[AUDIT] {len(violations)} skills have extra frontmatter fields "
+                f"(fix during Phase 2 domain audit sprints):"
+            )
+            for skill, fields in sorted(violations.items()):
+                print(f"  {skill}: {fields}")
+
+        # Non-blocking — progress tracker only
+        assert True
 
 
 class TestScriptDirectories:
