@@ -26,15 +26,15 @@ Every skill is a directory under one of the 9 domain folders:
 
 | Directory | Category | Current Count |
 |-----------|----------|---------------|
-| `engineering/` | POWERFUL-tier advanced engineering | 35 |
-| `engineering-team/` | Core engineering roles | 30 |
-| `marketing-skill/` | Marketing & growth | 43 |
-| `c-level-advisor/` | Executive advisory | 28 |
-| `product-team/` | Product management | 14 |
-| `ra-qm-team/` | Regulatory & quality | 13 |
-| `project-management/` | PM tools | 6 |
-| `business-growth/` | Sales & business dev | 4 |
-| `finance/` | Financial analysis | 2 |
+| `engineering/` | POWERFUL-tier advanced engineering | 45 |
+| `engineering-team/` | Core engineering roles | 37 |
+| `marketing-skill/` | Marketing & growth | 44 |
+| `c-level-advisor/` | Executive advisory | 34 |
+| `product-team/` | Product management | 16 |
+| `ra-qm-team/` | Regulatory & quality | 14 |
+| `project-management/` | PM tools | 9 |
+| `business-growth/` | Sales & business dev | 5 |
+| `finance/` | Financial analysis | 4 |
 
 Place your skill in the domain that best fits. If unsure, open an issue to discuss.
 
@@ -44,16 +44,17 @@ Place your skill in the domain that best fits. If unsure, open an issue to discu
 
 ### Frontmatter (YAML)
 
-**Only two fields are allowed:**
+**Allowed fields:**
 
 ```yaml
 ---
 name: "skill-name"
 description: "One-line description of when to use this skill. Be specific about trigger conditions."
+quality: verified          # Optional — added after passing the quality audit
 ---
 ```
 
-**Do NOT include:** `license`, `metadata`, `triggers`, `version`, `author`, `category`, `updated`, or any other fields. PRs with extra frontmatter fields will be rejected.
+**Do NOT include:** `license`, `metadata`, `triggers`, `version`, `author`, `category`, `updated`, or any other fields. Only `name`, `description`, and optionally `quality` are accepted. PRs with other extra frontmatter fields will be rejected.
 
 ### Content Requirements
 
@@ -91,7 +92,7 @@ If your skill includes a `.claude-plugin/plugin.json`, use this **exact schema**
 {
   "name": "skill-name",
   "description": "One-line description matching SKILL.md",
-  "version": "2.1.2",
+  "version": "2.3.0",
   "author": {
     "name": "Alireza Rezvani",
     "url": "https://alirezarezvani.com"
@@ -105,7 +106,7 @@ If your skill includes a `.claude-plugin/plugin.json`, use this **exact schema**
 
 **Rules:**
 - `author` **must be an object**, never a string. String format causes install errors.
-- `version` must match the current repo version (`2.1.2`).
+- `version` must match the current repo version (`2.3.0`).
 - No extra fields (`commands`, `hooks`, `triggers`, `tags`, `category`).
 - Not every skill needs a plugin.json — skills roll up into their domain's parent plugin automatically.
 
@@ -182,7 +183,7 @@ The following will be **immediately closed**:
 | Links to external repos/tools in README | We don't link 3rd party projects |
 | Skills that require paid API keys | Must work without external dependencies |
 | Skills that call LLMs in scripts | Scripts must be deterministic |
-| PRs that change the official skill count (205) | This number is curated |
+| PRs that change the official skill count (235) | This number is curated |
 | PRs targeting `main` instead of `dev` | All PRs must target `dev` |
 | PRs with bloated diffs (merge history from forks) | Rebase on `dev` HEAD first |
 | PRs that modify marketplace.json counts | We handle count updates |
@@ -278,12 +279,12 @@ python3 engineering/skill-security-auditor/scripts/skill_security_auditor.py <yo
 
 | What | Rule |
 |------|------|
-| Frontmatter fields | `name` + `description` only |
+| Frontmatter fields | `name` + `description` required; `quality` optional |
 | SKILL.md max lines | 500 |
 | Python dependencies | stdlib only |
 | PR target branch | `dev` |
 | plugin.json author | Object `{"name": "...", "url": "..."}`, never string |
 | External links in README | Not accepted |
-| Skill count | 205 (do not change) |
+| Skill count | 235 (do not change without updating all count tables) |
 | Commit format | Conventional commits |
 | Script output | Must support `--json` |
