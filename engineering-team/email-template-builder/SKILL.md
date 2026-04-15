@@ -429,6 +429,47 @@ export function addTrackingParams(html: string, params: TrackingParams): string 
 
 ---
 
+## Python Tools
+
+### `scripts/email_scaffold.py`
+
+Scaffold production-ready email templates from the command line. Generates TSX (React Email) or MJML output with your brand colors, responsive layout, and accessibility attributes.
+
+```bash
+# Generate a welcome email (TSX, default)
+python scripts/email_scaffold.py --type welcome --name "MyApp" --primary-color "#0066CC"
+
+# List available types
+python scripts/email_scaffold.py --list-types
+
+# Use a config file for brand consistency
+python scripts/email_scaffold.py --config brand.json --type invoice --output emails/Invoice.tsx
+
+# MJML output
+python scripts/email_scaffold.py --type welcome --format mjml --name "MyApp"
+```
+
+**Config file format (`brand.json`):**
+```json
+{
+  "name": "MyApp",
+  "primary_color": "#0066CC",
+  "background_color": "#f4f4f5",
+  "text_color": "#111827",
+  "muted_color": "#6b7280",
+  "base_url": "https://myapp.com",
+  "support_email": "support@myapp.com"
+}
+```
+
+**Available template types:** `welcome`, `reset-password`, `invoice`, `notification`, `verification`
+
+Each template includes: responsive 600px layout, branded header/footer, accessible button with fallback text link, and preview text for email clients.
+
+See [references/email-best-practices.md](references/email-best-practices.md) for email client compatibility table, deliverability checklist, dark mode support, accessibility guidelines, and provider setup (Resend, SendGrid, SES).
+
+---
+
 ## Common Pitfalls
 
 - **Inline styles required** — most email clients strip `<head>` styles; React Email handles this

@@ -383,86 +383,36 @@ export async function trackApiCall(userId: string) {
 
 ---
 
-## Customer Portal
+## Python Tools
 
-```typescript
-// app/api/billing/portal/route.ts
-import { NextResponse } from "next/server"
-import { stripe } from "@/lib/stripe"
-import { getAuthUser } from "@/lib/auth"
+### `scripts/stripe_webhook_validator.py`
 
-export async function POST() {
-  const user = await getAuthUser()
-  if (!user?.stripeCustomerId) {
-    return NextResponse.json({ error: "No billing account" }, { status: 400 })
-  }
-
-  const portalSession = await stripe.billingPortal.sessions.create({
-    customer: user.stripeCustomerId,
-    return_url: `${process.env.NEXT_PUBLIC_APP_URL}/settings/billing`,
-  })
-
-  return NextResponse.json({ url: portalSession.url })
-}
-```
-
----
-
-## Testing with Stripe CLI
+Two modes: **validate** an existing webhook handler for common security/reliability mistakes, or **scaffold** a production-grade handler from a list of event types.
 
 ```bash
-# Install Stripe CLI
-brew install stripe/stripe-cli/stripe
+# Validate an existing handler
+python scripts/stripe_webhook_validator.py validate src/webhooks/stripe.py
+python scripts/stripe_webhook_validator.py validate app/api/webhooks/route.ts
 
-# Login
-stripe login
+# Generate a TypeScript scaffold (Next.js App Router)
+python scripts/stripe_webhook_validator.py scaffold \
+  --lang typescript \
+  --events checkout.session.completed,customer.subscription.updated,invoice.payment_failed \
+  --output app/api/webhooks/stripe/route.ts
 
-# Forward webhooks to local dev
-stripe listen --forward-to localhost:3000/api/webhooks/stripe
+# Generate a Python scaffold (Flask)
+python scripts/stripe_webhook_validator.py scaffold --lang python \
+  --events checkout.session.completed,invoice.payment_failed
 
-# Trigger specific events for testing
-stripe trigger checkout.session.completed
-stripe trigger customer.subscription.updated
-stripe trigger invoice.payment_failed
-
-# Test with specific customer
-stripe trigger customer.subscription.updated \
-  --override subscription:customer=cus_xxx
-
-# View recent events
-stripe events list --limit 10
-
-# Test cards
-# Success: 4242 4242 4242 4242
-# Requires auth: 4000 0025 0000 3155
-# Decline: 4000 0000 0000 9995
-# Insufficient funds: 4000 0000 0000 9995
+# List all supported event types
+python scripts/stripe_webhook_validator.py events
 ```
 
----
+**Validation checks:** missing signature verification (CRITICAL), raw-body not used (CRITICAL), hardcoded webhook secret (CRITICAL), missing event.type routing, missing idempotency check, synchronous heavy processing, missing 200 response.
 
-## Feature Gating Helper
+**Scaffold output includes:** signature verification, idempotency guard, event-type routing with a handler stub per event, raw body reading, 200 response on all paths.
 
-```typescript
-// lib/subscription.ts
-export function isSubscriptionActive(user: { subscriptionStatus: string | null, stripeCurrentPeriodEnd: Date | null }) {
-  if (!user.subscriptionStatus) return false
-  if (user.subscriptionStatus === "active" || user.subscriptionStatus === "trialing") return true
-  // Grace period: past_due but not yet expired
-  if (user.subscriptionStatus === "past_due" && user.stripeCurrentPeriodEnd) {
-    return user.stripeCurrentPeriodEnd > new Date()
-  }
-  return false
-}
-
-// Middleware usage
-export async function requireActiveSubscription() {
-  const user = await getAuthUser()
-  if (!isSubscriptionActive(user)) {
-    redirect("/billing?reason=subscription_required")
-  }
-}
-```
+See [references/stripe-patterns.md](references/stripe-patterns.md) for testing with Stripe CLI, customer portal setup, feature gating helpers, and metadata strategy.
 
 ---
 

@@ -107,45 +107,44 @@ comparison:
 
 ## Scripts
 
-### stack_comparator.py
-
-Compare technologies with customizable weighted criteria.
+### `evaluate.py` — Unified CLI (recommended entry point)
 
 ```bash
-python scripts/stack_comparator.py --help
+# Compare two or more technologies
+python scripts/evaluate.py compare --techs react vue --use-case "SaaS dashboard"
+
+# Compare with custom weights (must be category=value pairs summing to 100)
+python scripts/evaluate.py compare --techs postgres mongodb \
+  --weights "performance=40,scalability=35,developer_experience=25"
+
+# 5-year TCO analysis
+python scripts/evaluate.py tco --technology "Next.js on Vercel" \
+  --team 8 --monthly-hosting 2500 --growth 40
+
+# Migration complexity estimate
+python scripts/evaluate.py migrate --from "Angular.js" --to "React" \
+  --loc 50000 --team 6
+
+# JSON output for reports
+python scripts/evaluate.py compare --techs react vue --output json
 ```
 
-### tco_calculator.py
+**Built-in profiles:** react, vue, angular, nextjs, postgres, mongodb.
+For other technologies, pass `--config` with custom JSON data.
 
-Calculate total cost of ownership over multi-year projections.
+**Weighted criteria (adjustable):** performance, scalability, developer_experience, ecosystem, learning_curve, documentation, community_support, enterprise_readiness.
 
-```bash
-python scripts/tco_calculator.py --input assets/sample_input_tco.json
-```
+### Library scripts (for programmatic use)
 
-### ecosystem_analyzer.py
+The following scripts are importable Python libraries used by `evaluate.py`:
 
-Analyze ecosystem health from GitHub, npm, and community metrics.
-
-```bash
-python scripts/ecosystem_analyzer.py --technology react
-```
-
-### security_assessor.py
-
-Evaluate security posture and compliance readiness.
-
-```bash
-python scripts/security_assessor.py --technology express --compliance soc2,gdpr
-```
-
-### migration_analyzer.py
-
-Estimate migration complexity, effort, and risks.
-
-```bash
-python scripts/migration_analyzer.py --from angular-1.x --to react
-```
+| Script | Class | Purpose |
+|--------|-------|---------|
+| `stack_comparator.py` | `StackComparator` | Weighted scoring across 8 criteria |
+| `tco_calculator.py` | `TCOCalculator` | Multi-year cost projection |
+| `migration_analyzer.py` | `MigrationAnalyzer` | Effort + risk estimation |
+| `ecosystem_analyzer.py` | `EcosystemAnalyzer` | GitHub/npm health metrics |
+| `security_assessor.py` | `SecurityAssessor` | CVE and compliance scoring |
 
 ---
 

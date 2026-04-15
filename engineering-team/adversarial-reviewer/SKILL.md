@@ -240,6 +240,38 @@ You are likely reviewing code you just wrote or just read. Your brain (weights) 
 - **On security-sensitive code** — auth, payments, data access, API endpoints
 - **When something "feels off"** — trust that instinct and run an adversarial review
 
+## Python Tools
+
+### `scripts/adversarial_review.py`
+
+Static analyzer that runs source files through all three personas and reports findings with severity and line numbers. Promotes findings caught by 2+ personas to the next severity level (NOTE → WARNING → CRITICAL).
+
+Supports Python, JavaScript, TypeScript, Go, Ruby.
+
+```bash
+# Full review — all three personas
+python scripts/adversarial_review.py src/auth.py
+
+# Single persona
+python scripts/adversarial_review.py src/payment.ts --persona security_auditor
+
+# Scan a directory
+python scripts/adversarial_review.py src/
+
+# JSON output for CI
+python scripts/adversarial_review.py src/ --output json
+```
+
+**Saboteur checks:** bare except, silent exception, TODO/FIXME, hardcoded timeouts, missing error handling on external calls, mutable default arguments.
+
+**New Hire checks:** magic numbers, single-char variables, functions >50 lines, deep nesting (4+ levels), what-comments, missing docstrings.
+
+**Security Auditor checks:** eval/exec, os.system with input, SQL string concatenation, hardcoded credentials, debug mode enabled, open redirects, path traversal.
+
+**Exit codes:** 0 = CLEAN/CONCERNS, 1 = BLOCK (critical findings present).
+
+See [references/persona-checklists.md](references/persona-checklists.md) for expanded per-persona checklists, OWASP Top 10 quick-check, and common patterns that fool reviewers.
+
 ## Cross-References
 
 - Related: `engineering-team/senior-security` — deep security analysis
