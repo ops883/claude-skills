@@ -1,0 +1,13 @@
+{
+  "name": "token-reducer",
+  "description": "Deterministic, stdlib-only context retrieval that indexes a codebase and answers natural-language queries with just the relevant chunks — reducing tokens spent reading whole files into context.",
+  "version": "2.3.0",
+  "author": {
+    "name": "Alireza Rezvani",
+    "url": "https://alirezarezvani.com"
+  },
+  "homepage": "https://github.com/alirezarezvani/claude-skills/tree/main/engineering/token-reducer",
+  "repository": "https://github.com/alirezarezvani/claude-skills",
+  "license": "MIT",
+  "skills": "./"
+}

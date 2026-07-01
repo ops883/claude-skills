@@ -1,0 +1,11 @@
+# Optional dependencies for token-reducer.
+#
+# scripts/context_pipeline.py and scripts/mcp_server.py run with ZERO
+# installs by default (stdlib-only "hash" and "tfidf" embedding backends).
+# Nothing here is required.
+#
+# Install only if you want to experiment with faster similarity search on
+# very large indexes (tens of thousands of chunks), where the pure-Python
+# cosine loop in query_index() becomes the bottleneck:
+#
+# numpy>=1.24

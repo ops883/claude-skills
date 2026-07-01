@@ -1,0 +1,6 @@
+{
+  "query": "Find auth logic",
+  "top_file_must_contain": "auth.py",
+  "min_score": 0.01,
+  "note": "Sanity check, not a golden score — exact scores depend on the hashing-trick backend. Asserts the top hit is auth.py, not the distractor files utils.py/models.py."
+}
