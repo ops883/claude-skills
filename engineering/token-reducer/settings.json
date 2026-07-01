@@ -1,0 +1,25 @@
+{
+  "name": "token-reducer",
+  "displayName": "Token Reducer",
+  "version": "1.0.0",
+  "description": "Deterministic, stdlib-only context retrieval that indexes a codebase and answers queries with just the relevant chunks — instead of loading whole files into an LLM's context window.",
+  "author": "Alireza Rezvani",
+  "license": "MIT",
+  "platforms": ["claude-code"],
+  "category": "development",
+  "tags": ["tokens", "context", "search", "indexing", "retrieval", "performance"],
+  "repository": "https://github.com/alirezarezvani/claude-skills",
+  "commands": {
+    "index": "/tr:index",
+    "search": "/tr:search",
+    "stats": "/tr:stats"
+  },
+  "hooks": {
+    "PostToolUse": {
+      "Read": "${CLAUDE_PLUGIN_ROOT}/hooks/suggest-search.sh"
+    }
+  },
+  "agents": [
+    "context-scout"
+  ]
+}
