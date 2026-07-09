@@ -130,30 +130,37 @@ Cada caso resuelto debe cerrar con un **expediente completo** — esto es lo que
 
 ---
 
-## 6. Roles del equipo de 3
+## 6. Roles del equipo
 
-### 👑 Abogada / Socia responsable (dueña del riesgo legal)
-- Es quien **firma las mociones** y asume la responsabilidad ante el bar y la Corte.
-- Aprueba, caso por caso: buena causa para retiro, cálculo de lo devengado, montos de reembolso, descuentos de cobro.
-- Define los **criterios de decisión A vs. B** y el **template de la moción** (idealmente revisado por asesor de ética).
+La operación se maneja con una función dedicada y control distribuido:
+
+### ⚖️ Abogado(a) revisor(a) (dueño del riesgo legal)
+- **Decide, caso por caso, si conviene o no retirarse** (Vía A vs. Vía B).
+- **Firma las mociones** y asume la responsabilidad ante el bar y la Corte.
+- Aprueba: buena causa para retiro, cálculo de lo devengado, montos de reembolso, descuentos de cobro.
+- Define los **criterios de decisión A/B** y el **template de la moción** (idealmente revisado por asesor de ética).
 - Comparece cuando un retiro no se concede a tiempo.
 - KPI: **% de casos resueltos sin queja/sanción** y **# de mociones concedidas**.
 
-### 🎯 Persona contratada — Ejecutora de la operación (motor del plan)
-- Corre el **triage** y mantiene la lista maestra priorizada por audiencia.
-- Ejecuta el **Camino A**: contacto, estados de cuenta, planes de pago, cobro.
-- Prepara los borradores del **Camino B** para revisión/firma de la abogada.
-- Reporta diariamente P1 en riesgo y el avance de resolución.
-- KPI: **# de casos resueltos/semana** y **$ cobrado**.
+### 👑 Jefe(a) de Contabilidad — Líder de la operación
+- **Dirige la operación**, integra los números y **reporta a la Junta**.
+- Extrae y asigna la cartera; supervisa el avance contra hitos y KPIs.
+- Cierra los casos en el tablero y valida el reporte mensual.
+- KPI: **% de la cartera resuelta** y **cumplimiento del cronograma**.
 
-### 📁 Apoyo de documentación / paralegal
-- Arma y verifica el **paquete de documentación** de cada caso (Sección 5).
-- Rastrea **fechas de audiencia y plazos** (el calendario es el corazón del riesgo).
-- Prepara mociones, cartas, certificados de servicio, reembolsos para firma.
-- Gestiona envíos certificados y prueba de notificación.
+### 📊 Coordinadores de Cuentas por Cobrar (2 personas)
+- **Arman el expediente** de cada cuenta: devengado/no devengado, próxima audiencia, contactabilidad.
+- **Priorizan por fecha de audiencia** (P1/P2/P3) y mantienen el tablero.
+- Gestionan planes de pago y preparan la documentación de soporte para Legal.
 - KPI: **% de expedientes completos** y **0 audiencias perdidas por descuido**.
 
-> Si el equipo son exactamente 3 y uno es la persona recién contratada como ejecutora, la abogada supervisa/firma y la tercera persona hace documentación/paralegal. Los dos "bajo su mando" son la **ejecutora** y el **apoyo de documentación**.
+### 💰 Encargado(a) de cobranza (+ apoyo temporal opcional)
+- Ejecuta la **Vía A**: contacto multicanal, estados de cuenta, negociación y cobro.
+- Escala a Legal las cuentas que no pagan ni acuerdan.
+- El **apoyo temporal** refuerza la cobranza en los picos de volumen.
+- KPI: **# de cuentas cobradas/semana** y **$ cobrado**.
+
+> Control distribuido: quien **arma el expediente** (CxC), quien **decide** (Legal) y quien **cobra** (Cobranza) son roles distintos. Ningún resultado depende de una sola persona — esto protege a la firma y a cada integrante.
 
 ---
 
