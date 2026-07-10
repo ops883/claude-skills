@@ -9,7 +9,14 @@
 #    context, so every session starts health-checked.
 #
 # Idempotent and non-interactive. Never aborts the session: always exits 0.
+#
+# Async mode: the JSON directive below is emitted first, then this script keeps
+# running in the background while the session starts (faster startup). Trade-off:
+# the agent may act before pip install finishes, so don't assume pytest is ready
+# in the very first moments of a session.
 set -uo pipefail
+
+echo '{"async": true, "asyncTimeout": 300000}'
 
 ROOT="${CLAUDE_PROJECT_DIR:-$(cd "$(dirname "$0")/../.." && pwd)}"
 cd "$ROOT" || exit 0
