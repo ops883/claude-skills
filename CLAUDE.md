@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a **comprehensive skills library** for Claude AI and Claude Code - reusable, production-ready skill packages that bundle domain expertise, best practices, analysis tools, and strategic frameworks. The repository provides modular skills that teams can download and use directly in their workflows.
 
-**Current Scope:** 235 production-ready skills across 9 domains with 314 Python automation tools, 435 reference guides, 28 agents, and 27 slash commands.
+**Current Scope:** ~235 production-ready skills across 9 domains with 320+ Python automation tools, 440+ reference guides, 28 agents, and 29 slash commands. Also distributed as 6 ChatGPT Custom GPTs (`custom-gpt/`) and synced to 12 supported agent tools.
 
 **Key Distinction**: This is NOT a traditional application. It's a library of skill packages meant to be extracted and deployed by users into their own Claude workflows.
 
@@ -37,23 +37,37 @@ This repository uses **modular documentation**. For domain-specific guidance, se
 claude-code-skills/
 ├── .claude-plugin/            # Plugin registry (marketplace.json)
 ├── agents/                    # 25 agents across all domains
-├── commands/                  # 22 slash commands (changelog, tdd, saas-health, prd, code-to-prd, plugin-audit, sprint-plan, etc.)
+├── commands/                  # 29 slash commands (changelog, tdd, saas-health, prd, code-to-prd, plugin-audit, sprint-plan, wiki-*, tc, etc.)
 ├── engineering-team/          # 37 core engineering skills + Playwright Pro + Self-Improving Agent + Security Suite
-├── engineering/               # 45 POWERFUL-tier advanced skills (incl. AgentHub, self-eval, llm-wiki, tc-tracker)
-├── product-team/              # 16 product skills (incl. apple-hig-expert) + Python tools
-├── marketing-skill/           # 44 marketing skills (7 pods) + Python tools
+├── engineering/               # 47 POWERFUL-tier advanced skills (incl. AgentHub, self-eval, llm-wiki, tc-tracker, karpathy-coder)
+├── product-team/              # 17 product skills (incl. apple-hig-expert) + Python tools
+├── marketing-skill/           # 45 marketing skills (7 pods) + Python tools
 ├── c-level-advisor/           # 34 C-level advisory skills (10 roles + orchestration)
 ├── project-management/        # 9 PM skills + Atlassian MCP
 ├── ra-qm-team/                # 14 RA/QM compliance skills
 ├── business-growth/           # 5 business & growth skills + Python tools
 ├── finance/                   # 4 finance skills + Python tools
+├── custom-gpt/                # 6 Custom GPTs (ChatGPT distribution of the skills library)
+├── orchestration/            # Orchestration Protocol — persona + skill + task-agent coordination pattern
 ├── eval-workspace/            # Skill evaluation results (Tessl)
 ├── standards/                 # 5 standards library files
 ├── templates/                 # Reusable templates
+├── tests/                     # pytest suite for selected Python tools (12 test modules)
 ├── docs/                      # MkDocs Material documentation site
-├── scripts/                   # Build scripts (docs generation)
+├── scripts/                   # Build/sync scripts (docs generation, cross-tool sync incl. Hermes)
 └── documentation/             # Implementation plans, sprints, delivery
 ```
+
+### Root-Level Governance Docs
+
+| File | Purpose |
+|------|---------|
+| [CONVENTIONS.md](CONVENTIONS.md) | **Mandatory** conventions for all contributors (human + AI). Skill structure, domains, naming, the **Quality Rubric** (5-dimension 1–5 scoring; ≥3 on all dims for `quality: verified`). |
+| [SKILL-AUTHORING-STANDARD.md](SKILL-AUTHORING-STANDARD.md) | How to author a compliant SKILL.md (frontmatter, structure). |
+| [SKILL_PIPELINE.md](SKILL_PIPELINE.md) | The skill creation → audit → publish pipeline. |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution workflow and PR process. |
+| [STORE.md](STORE.md) / [INSTALLATION.md](INSTALLATION.md) | Distribution and install instructions. |
+| [GEMINI.md](GEMINI.md) | Gemini CLI cross-tool guidance. |
 
 ### Skill Package Pattern
 
@@ -109,28 +123,42 @@ See [standards/git/git-workflow-standards.md](standards/git/git-workflow-standar
 
 ## Development Environment
 
-**No build system or test frameworks** - intentional design choice for portability.
+**No application build system** - intentional design choice for portability. Skills are extracted and run as-is.
 
 **Python Scripts:**
 - Use standard library only (minimal dependencies)
 - CLI-first design for easy automation
 - Support both JSON and human-readable output
 - No ML/LLM calls (keeps skills portable and fast)
+- Every script must respond to `--help`
+
+**Testing:**
+- A lightweight `tests/` directory holds a **pytest** suite (12 modules) covering selected Python tools (e.g. `test_dcf_valuation.py`, `test_okr_tracker.py`, `test_commit_linter.py`, `test_gdpr_compliance.py`).
+- Run with `pytest` from the repo root. Tests are stdlib + pytest only — no other infra.
+- This is a smoke/regression net for tools, not a full app test framework. Skills themselves remain self-contained.
 
 **If adding dependencies:**
 - Keep scripts runnable with minimal setup (`pip install package` at most)
 - Document all dependencies in SKILL.md
 - Prefer standard library implementations
 
+**Cross-Tool Sync:** `scripts/` contains sync utilities (e.g. `sync-hermes-skills.py`) that mirror skills to other agent tools. The library targets **12 supported tools**: Claude Code, OpenAI Codex, Cursor, Gemini CLI, Antigravity, OpenCode, OpenClaw, Hermes Agent, and others.
+
 ## Current Version
 
 **Version:** v2.3.0 (latest)
 
 **v2.3.0 Highlights:**
-- **llm-wiki plugin** — new POWERFUL-tier skill implementing Karpathy's LLM Wiki pattern. Second brain for Claude Code + Obsidian where the LLM incrementally ingests sources into a persistent, interlinked markdown vault. Ships SKILL.md (with `context: fork`), 3 sub-agents (wiki-ingestor, wiki-librarian, wiki-linter), 5 slash commands (/wiki-init, /wiki-ingest, /wiki-query, /wiki-lint, /wiki-log), 8 stdlib-only Python tools, 8 reference guides, full vault templates, and a worked example. Cross-tool compatible with Claude Code, Codex CLI, Cursor, Antigravity, OpenCode, Gemini CLI.
-- **tc-tracker** — new engineering skill: task context tracker with lifecycle, handoff format, schema, and 5 Python tools (tc_init, tc_create, tc_update, tc_status, tc_validator) plus `/tc` slash command
-- **apple-hig-expert** — new product skill: Apple Human Interface Guidelines expert with Liquid Glass aesthetic focus. Audits iOS/macOS/visionOS apps with `hig_checker` Python tool and comprehensive reference docs on visual design, platform specifics, and accessibility
-- 235 total skills, 314 Python tools, 435 references, 28 agents, 27 commands
+- **karpathy-coder** — new engineering skill: active coding-discipline enforcer (Karpathy's "keep the LLM on a tight leash" pattern). Passes the 8-phase plugin audit and wires into repo integration.
+- **Hermes Agent** promoted as the **12th supported cross-tool** across all docs, with a `scripts/sync-hermes-skills.py` sync script.
+- **Quality Rubric** added to [CONVENTIONS.md](CONVENTIONS.md) — a 5-dimension (1–5) scoring system; skills must score ≥3 on all five to earn `quality: verified`.
+- **llm-wiki plugin** — POWERFUL-tier skill implementing Karpathy's LLM Wiki pattern. Second brain for Claude Code + Obsidian where the LLM incrementally ingests sources into a persistent, interlinked markdown vault. Ships SKILL.md (with `context: fork`), 3 sub-agents (wiki-ingestor, wiki-librarian, wiki-linter), 5 slash commands (/wiki-init, /wiki-ingest, /wiki-query, /wiki-lint, /wiki-log), 8 stdlib-only Python tools, 8 reference guides, full vault templates, and a worked example.
+- **tc-tracker** — engineering skill: task context tracker with lifecycle, handoff format, schema, and 5 Python tools (tc_init, tc_create, tc_update, tc_status, tc_validator) plus `/tc` slash command
+- **apple-hig-expert** — product skill: Apple Human Interface Guidelines expert with Liquid Glass aesthetic focus. Audits iOS/macOS/visionOS apps with `hig_checker` Python tool and comprehensive reference docs on visual design, platform specifics, and accessibility
+- **custom-gpt/** and **orchestration/** — 6 ChatGPT Custom GPTs packaging the library, plus the dependency-free Orchestration Protocol for coordinating personas, skills, and task agents.
+- ~235 skills across 9 domains, 320+ Python tools, 440+ references, 28 agents, 29 commands, 12 supported tools
+
+> **Note on counts:** headline figures vary slightly with counting method (some skills nest example `SKILL.md` files under `references/`/`assets/`). The canonical per-domain counts live in [CONVENTIONS.md](CONVENTIONS.md); treat the numbers here as approximate and verify with `find <domain> -maxdepth 2 -name SKILL.md` when precision matters.
 
 **Version:** v2.2.0
 
@@ -161,11 +189,11 @@ See [standards/git/git-workflow-standards.md](standards/git/git-workflow-standar
 
 ## Roadmap
 
-**Phase 1-3 Complete:** 235 production-ready skills deployed across 9 domains
-- Engineering Core (37), Engineering POWERFUL (45), Product (16), Marketing (44), PM (9), C-Level (34), RA/QM (14), Business & Growth (5), Finance (4)
-- 314 Python automation tools, 435 reference guides, 28 agents, 27 commands
+**Phase 1-3 Complete:** ~235 production-ready skills deployed across 9 domains
+- Engineering Core (37), Engineering POWERFUL (47), Product (17), Marketing (45), PM (9), C-Level (34), RA/QM (14), Business & Growth (5), Finance (4)
+- 320+ Python automation tools, 440+ reference guides, 28 agents, 29 commands
 - Complete enterprise coverage from engineering through regulatory compliance, sales, customer success, and finance
-- MkDocs Material docs site with 293+ indexed pages for SEO
+- MkDocs Material docs site for SEO; distributed via ClawHub registry, the plugin marketplace, and 6 ChatGPT Custom GPTs
 
 See domain-specific roadmaps in each skill folder's README.md or roadmap files.
 
@@ -191,7 +219,7 @@ This repository publishes skills to **ClawHub** (clawhub.com) as the distributio
 ## Anti-Patterns to Avoid
 
 - Creating dependencies between skills (keep each self-contained)
-- Adding complex build systems or test frameworks (maintain simplicity)
+- Adding complex build systems or heavy test infra (the `tests/` suite is intentionally lightweight pytest only — keep it that way)
 - Generic advice (focus on specific, actionable frameworks)
 - LLM calls in scripts (defeats portability and speed)
 - Over-documenting file structure (skills are simple by design)
@@ -202,11 +230,13 @@ This repository publishes skills to **ClawHub** (clawhub.com) as the distributio
 
 **Editing Existing Skills:** Maintain consistency across markdown files. Use the same voice, formatting, and structure patterns.
 
-**Quality Standard:** Each skill should save users 40%+ time while improving consistency/quality by 30%+.
+**Quality Standard:** Each skill should save users 40%+ time while improving consistency/quality by 30%+. Audit against the **Quality Rubric** in [CONVENTIONS.md](CONVENTIONS.md) (score ≥3 on all 5 dimensions for `quality: verified`). The `/plugin-audit` skill runs the full 8-phase audit pipeline on a skill directory.
 
 ## Additional Resources
 
 - **.gitignore:** Excludes .vscode/, .DS_Store, AGENTS.md, PROMPTS.md, .env*
+- **Conventions:** [CONVENTIONS.md](CONVENTIONS.md) - Mandatory rules + Quality Rubric (read before authoring/editing skills)
+- **Skill Authoring:** [SKILL-AUTHORING-STANDARD.md](SKILL-AUTHORING-STANDARD.md), [SKILL_PIPELINE.md](SKILL_PIPELINE.md)
 - **Plugin Registry:** [.claude-plugin/marketplace.json](.claude-plugin/marketplace.json) - Marketplace distribution
 - **Standards Library:** [standards/](standards/) - Communication, quality, git, documentation, security
 - **Implementation Plans:** [documentation/implementation/](documentation/implementation/)
@@ -214,6 +244,6 @@ This repository publishes skills to **ClawHub** (clawhub.com) as the distributio
 
 ---
 
-**Last Updated:** April 11, 2026
+**Last Updated:** June 9, 2026
 **Version:** v2.3.0
-**Status:** 235 skills deployed across 9 domains, 30 marketplace plugins, docs site live
+**Status:** ~235 skills deployed across 9 domains, 35 marketplace plugins, 12 supported tools, docs site live

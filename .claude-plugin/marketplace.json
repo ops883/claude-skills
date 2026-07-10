@@ -682,6 +682,28 @@
       "category": "development"
     },
     {
+      "name": "batman",
+      "source": "./batman",
+      "description": "Remote-standardized profile of Francisco's unified assistant for the Law Offices of José R. Santiago. Silent task router plus 8 self-contained immigration-law skills (aos-audit, case-status, deadline-letter, form-checklist, intake-to-case, nta-review, priority-date, rfe-response) and a remote health-check doctor. Routes across the MCP servers and native tools a Claude Code remote session actually has; retires desktop-only local backends. Stdlib-only USCIS helper.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Francisco Guerrero"
+      },
+      "keywords": [
+        "legal",
+        "immigration",
+        "uscis",
+        "law",
+        "router",
+        "assistant",
+        "remote",
+        "aos",
+        "rfe",
+        "nta"
+      ],
+      "category": "productivity"
+    },
+    {
       "name": "agile-product-owner",
       "source": "./product-team/agile-product-owner",
       "description": "Agile product ownership for backlog management and sprint execution. INVEST-compliant user story generation, acceptance criteria patterns (Given/When/Then, rule-based, checklist), epic breakdown with 5 split techniques, sprint planning with velocity-based capacity math, and weighted backlog prioritization. Includes user_story_generator Python tool and 2 reference guides.",
