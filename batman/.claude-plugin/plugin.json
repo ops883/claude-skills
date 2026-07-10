@@ -1,0 +1,12 @@
+{
+  "name": "batman",
+  "description": "Francisco's unified AI assistant — remote-standardized (lean-and-mean) profile that routes legal, dev, research, and comms tasks silently across the MCP servers and native tools a Claude Code remote session actually has",
+  "version": "1.1.0",
+  "author": {
+    "name": "Francisco Guerrero"
+  },
+  "homepage": "https://github.com/alirezarezvani/claude-skills",
+  "repository": "https://github.com/alirezarezvani/claude-skills",
+  "license": "MIT",
+  "skills": "./skills"
+}
